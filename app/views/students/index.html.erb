@@ -1,0 +1,9 @@
+<h1> All Students who share Your House! </h1>
+
+<ul>
+    <% @shared_house.each do |student| %>
+        <li>
+            <%= link_to student.name, student_path(student) %>
+        </li>
+    <% end %>
+</ul>
