@@ -1,0 +1,7 @@
+<h1>Club Sign Up</h1>
+
+<%= form_for @membership do |f| %>
+    <%= f.label :club_id %>
+    <%= f.collection_select :club_id, @clubs, :id, :name %>
+    <%= f.submit "Sign Up" %>   
+<% end %>
