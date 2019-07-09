@@ -18,7 +18,7 @@ class CoursesController < ApplicationController
         if @course.valid?
             redirect_to courses_path
         else
-            flash[:errors] = @course.erros.full_messages
+            flash[:errors] = @course.errors.full_messages
             redirect_to new_course_path 
         end
     end

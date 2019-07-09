@@ -1,0 +1,9 @@
+<h1> All Clubs </h1>
+
+<ul>
+    <% @clubs.each do |club| %>
+        <li>
+            <%= link_to club.name, club_path(club) %>
+        </li>
+    <% end %>
+</ul>
