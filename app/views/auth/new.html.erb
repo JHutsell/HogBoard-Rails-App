@@ -1,0 +1,19 @@
+<h1> Log In To Hogboard </h1>
+
+<ul>
+<% if flash[:message] %>
+   <%= flash[:message] %>
+   <% end %>
+</ul>
+
+<h3>
+<%= form_tag "/auth" do %>
+    <%= label_tag "Username:" %>
+    <%= text_field_tag :username %>
+    <br>
+    <%= label_tag "Password:" %>
+    <%= password_field_tag :password %>
+    <br>
+    <%= submit_tag "Log In" %>
+  <% end %>
+  </h3>
