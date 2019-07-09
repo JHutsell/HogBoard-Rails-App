@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  root to: "auth#show"
+  root to: "auth#new"
   
   resources :chats
   resources :memberships
