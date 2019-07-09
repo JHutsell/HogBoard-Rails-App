@@ -1,6 +1,5 @@
 class AuthController < ApplicationController 
 
-    before_action :authorized
 
     def new 
     end 
@@ -22,6 +21,8 @@ class AuthController < ApplicationController
     session[:student_id] = nil
     redirect_to login_path
   end
+
+  
 
 
 
