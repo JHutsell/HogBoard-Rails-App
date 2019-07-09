@@ -33,3 +33,5 @@ potions101 = Course.create(name: "Potions 101", description: "Basic potions intr
 herbology101 = Course.create(name: "Herbology 101", description: "Basic Herbology intro course", professor: sprout, grade: 50)
 
 
+
+
