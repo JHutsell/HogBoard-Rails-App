@@ -28,7 +28,9 @@ animals = Club.create(name: "Magical Creatures Appreciation Club", description: 
 choir = Club.create(name: "Wizard's Choir", description: "Learn to sing and harmonize with a group. Regular performances at the Great Hall.", professor: franchely)
 fun = Club.create(name: "Extracurricular Wizarding Activities", description: "Join us for some magical fun. Meets late nights in Hogsmead. Must sign disclaimer.", professor: justin)
 
-
+charms101 = Course.create(name: "Charms 101", description: "Basic charms intro course", professor: flitwick, grade: 91)
+potions101 = Course.create(name: "Potions 101", description: "Basic potions intro course", professor: snape, grade: 95)
+herbology101 = Course.create(name: "Herbology 101", description: "Basic Herbology intro course", professor: sprout, grade: 50)
 
 
 

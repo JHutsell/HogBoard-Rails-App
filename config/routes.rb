@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   
   resources :chats
   resources :memberships
-  resources :clubs, only: [:index, :show]
+  resources :clubs, only: [:index, :show, ]
   resources :professors, only: [:index, :show]
   resources :courses
   resources :students, only: [:index, :show, :new, :create]
