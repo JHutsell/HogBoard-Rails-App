@@ -10,14 +10,16 @@ class MembershipsController < ApplicationController
     end
 
     def create
-        @membership = Membership.create(student_id: @student_id, membership_params)
-        redirect_to student_path(@student_id)
+        params[:membership][:student_id] = @current_student.id
+        @membership = Membership.create(membership_params)
+        byebug
+        redirect_to student_path(@current_student)
     end
 
     private
 
     def membership_params
-        params.require(:membership).permit(:club_id)
+        params.require(:membership).permit(:student_id, :club_id)
     end
 end
 

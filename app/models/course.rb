@@ -1,4 +1,6 @@
 class Course < ApplicationRecord
-    belongs_to :student
+    has_many :syllabuses
+    has_many :students, through: :syllabuses
     belongs_to :professor
+
 end

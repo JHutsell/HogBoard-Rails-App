@@ -1,4 +1,7 @@
+<div>
 <%= form_for @chat do |f| %>
+    <%= f.hidden_field :student_id %>
+    <br>
     <%= f.label :club %>
     <%= f.collection_select :club_id, @current_student.clubs, :id, :name %>
     <br>
@@ -7,3 +10,4 @@
     <br>
     <%= f.submit %>
 <% end %>
+</div>

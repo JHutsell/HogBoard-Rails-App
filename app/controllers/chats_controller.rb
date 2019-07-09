@@ -1,5 +1,5 @@
 class ChatsController < ApplicationController
-    before_action :find_chat, only: [:show, :edit, :update, :delete]
+    before_action :find_chat, only: [:show, :edit, :update, :destroy]
     before_action :authorized
 
     def index 
@@ -15,6 +15,7 @@ class ChatsController < ApplicationController
     end
     
     def create
+        params[:chat][:student_id] = @current_student.id
         @chat = Chat.create(chat_params)
         if @chat.valid?
             redirect_to chats_path
@@ -38,7 +39,7 @@ class ChatsController < ApplicationController
     end
 
     def destroy
-        @chat = @current_user.chats.find(params[:id])
+        # @chat = @current_user.chats.find(params[:id])
         @chat.destroy
         redirect_to chats_path
     end

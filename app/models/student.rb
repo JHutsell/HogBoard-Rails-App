@@ -1,6 +1,7 @@
 class Student < ApplicationRecord
-    has_many :courses
-    has_many :professors, through: :courses
+    has_many :syllabuses
+    has_many :courses, through: :syllabuses
+    # has_many :professors, through: :courses
     has_many :memberships
     has_many :clubs, through: :memberships
     has_many :chats

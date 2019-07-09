@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_08_200806) do
+ActiveRecord::Schema.define(version: 2019_07_09_212855) do
 
   create_table "chats", force: :cascade do |t|
     t.string "content"
@@ -34,13 +34,10 @@ ActiveRecord::Schema.define(version: 2019_07_08_200806) do
   create_table "courses", force: :cascade do |t|
     t.string "name"
     t.string "description"
-    t.integer "student_id"
     t.integer "professor_id"
-    t.integer "grade"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["professor_id"], name: "index_courses_on_professor_id"
-    t.index ["student_id"], name: "index_courses_on_student_id"
   end
 
   create_table "memberships", force: :cascade do |t|
@@ -64,13 +61,21 @@ ActiveRecord::Schema.define(version: 2019_07_08_200806) do
     t.string "name"
     t.integer "year"
     t.string "house"
-    t.integer "gpa"
     t.string "patronus"
     t.string "bloodstatus"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"
     t.string "username"
+  end
+
+  create_table "syllabuses", force: :cascade do |t|
+    t.integer "student_id"
+    t.integer "course_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["course_id"], name: "index_syllabuses_on_course_id"
+    t.index ["student_id"], name: "index_syllabuses_on_student_id"
   end
 
 end

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :syllabuses
   root to: "auth#new"
   
   resources :chats

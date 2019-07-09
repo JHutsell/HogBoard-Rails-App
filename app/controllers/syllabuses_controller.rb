@@ -1,0 +1,2 @@
+class SyllabusesController < ApplicationController
+end
