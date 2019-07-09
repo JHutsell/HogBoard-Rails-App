@@ -8,6 +8,20 @@ class StudentsController < ApplicationController
         find_student
     end 
 
+    def new
+        @student = Student.new
+    end
+
+    def create
+        @student = Student.create(student_params)
+        if @student.valid?
+            session[:student_id] = @student.id
+            redirect_to student_path(@student)
+        else
+            redirect_to new_student_path
+        end
+    end
+
 
     private
 

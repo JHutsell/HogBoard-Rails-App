@@ -13,3 +13,5 @@
  *= require_tree .
  *= require_self
  */
+
+ div.form-actions { width: 100%; text-align: center;}

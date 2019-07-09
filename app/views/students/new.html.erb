@@ -1,0 +1,26 @@
+<h1> Registration 🧙‍♂️ <h1>
+
+<%= form_for @student do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <br>
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+    <br>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+    <br>
+    <%= f.label :house %>
+    <%= f.select :house, ["Gryffindor", "Sytherin", "Ravenclaw", "Hufflepuff"], :prompt => "Select One" %>
+    <br>
+    <%= f.label :year %>
+    <%= f.number_field :year %>
+    <br>
+    <%= f.label :bloodstatus %>
+    <%= f.select :bloodstatus, ["Muggle-Born", "Half-Blood", "Pure-Blood"], :prompt => "Select One" %>
+    <br>
+    <%= f.label :patronus %>
+    <%= f.text_field :patronus %>
+    <br>
+    <%= f.submit "Create your account" %>
+<% end %>

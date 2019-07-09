@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :clubs, only: [:index, :show]
   resources :professors, only: [:index, :show]
   resources :courses
-  resources :students, except: [:destroy]
+  resources :students, only: [:index, :show, :new, :create]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 
