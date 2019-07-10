@@ -1,4 +1,8 @@
 <h1><%= @club.name %></h1>
+<h5> When: Mondays and Wednesdays at 4pm
+<br>
+Where: Quidditch Field  </h5>
+
 
 <p><%= @club.description %></p>
 
@@ -20,5 +24,7 @@
         </li>
     <% end %>
 </ul>
+
+<h4> <%= link_to "Add a Comment", new_club_chat_path(@club.id) %> </h4>
 
 
