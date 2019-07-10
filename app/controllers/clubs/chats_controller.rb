@@ -36,10 +36,12 @@ class Clubs::ChatsController < ApplicationController
 
     def update
         if @chat.update(chat_params)
-            redirect_to chat_path(@chat)
+            params[:chat][:student_id] = @current_student.id
+            params[:chat][:club_id] = @club_id
+            redirect_to club_chat_path(@chat)
         else 
             flash[:errors] = @chat.errors.full_messages
-            redirect_to edit_chat_path(@chat)
+            redirect_to edit_club_chat_path(@chat)
         end
     end
 

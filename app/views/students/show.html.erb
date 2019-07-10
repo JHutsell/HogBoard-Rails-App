@@ -6,8 +6,8 @@
 <br>
 <%= link_to "View My Courses", syllabuses_path %>
 <br>
-<<<<<<< HEAD
-<%= link_to "All of My Clubs", memberships_path %>
+
+<%= link_to "View My Clubs", memberships_path %>
 <br>
 <%= button_to "Register for a course", new_syllabus_path, method: :get %>
 <br>
@@ -17,14 +17,12 @@
 <ul>
     <% @chats.each do |chat| %>
         <li>
-            "<%= link_to chat.content, chat_path(chat) %>" - <%= link_to chat.club.name, club_path(chat.club) %>
+            "<%= link_to chat.content, club_chat_path(chat) %>" - <%= link_to chat.club.name, club_path(chat.club) %>
         </li>
     <% end %>
 </ul>
 
-=======
-<%= link_to "View My Clubs", memberships_path %>
->>>>>>> 10f899ed3a159e5594468ce018470c25a4810f03
+
 
 
 
