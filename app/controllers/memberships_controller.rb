@@ -12,7 +12,6 @@ class MembershipsController < ApplicationController
     def create
         params[:membership][:student_id] = @current_student.id
         @membership = Membership.create(membership_params)
-        byebug
         redirect_to student_path(@current_student)
     end
 
