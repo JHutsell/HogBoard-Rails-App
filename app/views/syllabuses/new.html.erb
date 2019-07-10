@@ -1,0 +1,8 @@
+<h1>Class Sign Up</h1>
+
+<%= form_for @syllabus do |f| %>
+    <%= f.hidden_field :student_id %>
+    <%= f.label :course_id %>
+    <%= f.collection_select :course_id, @courses, :id, :name %>
+    <%= f.submit "Sign Up" %>   
+<% end %>

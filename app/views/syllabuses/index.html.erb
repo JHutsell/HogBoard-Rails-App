@@ -1,0 +1,9 @@
+<h1>All of your Classes</h1>
+
+<ul>
+    <% @syllabuses.each do |syllabus| %>
+        <li>
+            <%= link_to syllabus.course.name, course_path(syllabus.course) %>
+        </li>
+    <% end %>
+</ul>

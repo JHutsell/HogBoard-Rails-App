@@ -1,3 +1,24 @@
 <h1><%= @club.name %></h1>
 
 <p><%= @club.description %></p>
+
+<p>Club Roster: </p>
+<ul>
+    <% @students.each do |student| %>
+        <li>
+            <%= link_to student.name, student_path(student) %>
+        </li>
+    <% end %>
+</ul>
+<p>Recent comments: </p>
+<ul>
+    <% @chats.each do |chat| %>
+        <li>
+            "<%= chat.content %>" 
+            <br>
+            by: <%= link_to chat.student.name, student_path(chat.student) %>
+        </li>
+    <% end %>
+</ul>
+
+

@@ -7,6 +7,7 @@ class ClubsController < ApplicationController
 
     def show
         @students = @club.students
+        @chats = @club.chats
     end
 
     def new

@@ -1,0 +1,9 @@
+<h1>All of your Clubs</h1>
+
+<ul>
+    <% @memberships.each do |membership| %>
+        <li>
+            <%= link_to membership.club.name, club_path(membership.club) %>
+        </li>
+    <% end %>
+</ul>
