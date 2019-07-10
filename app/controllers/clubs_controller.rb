@@ -30,7 +30,7 @@ class ClubsController < ApplicationController
         @club = Club.find(params[:id])
     end
 
-    def course_params
+    def club_params
         params.require(:club).permit(:name, :description, :professor_id)
     end
 end
