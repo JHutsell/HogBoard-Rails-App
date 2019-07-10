@@ -6,6 +6,7 @@ class StudentsController < ApplicationController
 
     def show 
         find_student
+        @chats = @current_student.chats
     end 
 
     def new

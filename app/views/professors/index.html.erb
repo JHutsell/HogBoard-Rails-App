@@ -1,0 +1,9 @@
+<h1>All Professors</h1>
+
+<ul>
+    <% @professors.each do |professor| %>
+        <li>
+            <%= link_to professor.name, professor_path(professor) %> teaches: <%= professor.subject %>
+        </li>
+    <% end %>
+</ul>

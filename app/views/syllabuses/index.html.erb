@@ -4,6 +4,7 @@
     <% @syllabuses.each do |syllabus| %>
         <li>
             <%= link_to syllabus.course.name, course_path(syllabus.course) %>
+            <%= button_to "Drop this Course", syllabus_path(syllabus), method: :delete %>
         </li>
     <% end %>
 </ul>

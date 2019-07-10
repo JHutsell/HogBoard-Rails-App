@@ -1,4 +1,6 @@
 class SyllabusesController < ApplicationController
+    before_action :authorized
+
     def index
         @syllabuses = @current_student.syllabuses
     end
@@ -12,6 +14,12 @@ class SyllabusesController < ApplicationController
         params[:syllabus][:student_id] = @current_student.id
         @syllabus = Syllabus.create(syllabus_params)
         redirect_to student_path(@current_student)
+    end
+
+    def destroy
+        @syllabus = Syllabus.find(params[:id])
+        @syllabus.destroy
+        redirect_to syllabuses_path
     end
 
     private

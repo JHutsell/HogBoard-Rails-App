@@ -1,5 +1,6 @@
 class CoursesController < ApplicationController
     before_action :find_course, only: [:show, :edit, :update, :destroy]
+    before_action :authorized
 
     def index
         @courses = Course.all

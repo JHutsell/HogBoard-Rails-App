@@ -1,4 +1,5 @@
 class MembershipsController < ApplicationController
+    before_action :authorized
     
     def index
         @memberships = @current_student.memberships
