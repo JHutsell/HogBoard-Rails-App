@@ -10,6 +10,22 @@
   </head>
 
   <body>
+
+  <% if @logged_in %>
+
+  <p>
+    Logged In As: <%= @current_student.name %> 
+    <br>
+    <%= link_to "Home", student_path(@current_student) %> <%= button_to "Log Out", "/auth", method: :delete %>
+
+<% else %>
+
+  <%= link_to "Login", "/login" %>
+  <%= link_to "Register", new_student_path %>
+
+<% end %>
+
+
     <%= yield %>
   </body>
 </html>
