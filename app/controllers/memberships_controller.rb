@@ -13,7 +13,12 @@ class MembershipsController < ApplicationController
     def create
         params[:membership][:student_id] = @current_student.id
         @membership = Membership.create(membership_params)
-        redirect_to student_path(@current_student)
+        if @membership.valid?
+            redirect_to student_path(@current_student)
+        else
+            flash[:errors] = @membership.errors.full_messages
+            redirect_to new_membership_path
+        end
     end
 
     private
