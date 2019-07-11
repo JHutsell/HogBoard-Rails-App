@@ -30,7 +30,7 @@ Post a Comment:
         <li>
             "<%= chat.content %>" 
             <br>
-            by: <%= link_to chat.student.name, student_path(chat.student) %>
+            by: <%= link_to chat.student.username, student_path(chat.student) %>
         </li>
     <% end %>
 </ul>

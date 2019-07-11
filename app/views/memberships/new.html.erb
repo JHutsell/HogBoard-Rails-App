@@ -1,5 +1,9 @@
 <h1>Club Sign Up</h1>
 
+<% if flash[:message] %>
+    <%= flash[:message] %>
+<% end %>
+
 <%= form_for @membership do |f| %>
     <%= f.hidden_field :student_id %>
     <%= f.label :club_id %>

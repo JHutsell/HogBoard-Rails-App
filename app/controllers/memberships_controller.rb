@@ -16,9 +16,15 @@ class MembershipsController < ApplicationController
         if @membership.valid?
             redirect_to student_path(@current_student)
         else
-            flash[:errors] = @membership.errors.full_messages
+            flash[:message] = "You have already joined this club!"
             redirect_to new_membership_path
         end
+    end
+
+    def destroy
+        @membership = Membership.find(params[:id])
+        @membership.destroy
+        redirect_to memberships_path
     end
 
     private

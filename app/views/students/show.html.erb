@@ -4,22 +4,24 @@
 <p>Patronus: <%= @student.patronus %></p>
 <p>Bloodstatus: <%= @student.bloodstatus %></p>
 <br>
-<%= link_to "All of My Courses", syllabuses_path %>
-<br>
-<%= link_to "All of My Clubs", memberships_path %>
-<br>
-<h4>My Comments</h4>
-<ul>
-    <% @chats.each do |chat| %>
-        <li>
-            "<%= link_to chat.content, chat_path(chat) %>" - <%= link_to chat.club.name, club_path(chat.club) %>
-        </li>
-    <% end %>
-</ul>
-<%= button_to "Register for a course", new_syllabus_path, method: :get %>
-<br>
-<%= button_to "Join a Club", new_membership_path, method: :get %>
-<br>
+<% if @student == @current_student %>
+    <%= link_to "All of My Courses", syllabuses_path %>
+    <br>
+    <%= link_to "All of My Clubs", memberships_path %>
+    <br>
+    <h4>My Comments</h4>
+    <ul>
+        <% @chats.each do |chat| %>
+            <li>
+                "<%= link_to chat.content, chat_path(chat) %>" - <%= link_to chat.club.name, club_path(chat.club) %>
+            </li>
+        <% end %>
+    </ul>
+    <%= button_to "Register for a course", new_syllabus_path, method: :get %>
+    <br>
+    <%= button_to "Join a Club", new_membership_path, method: :get %>
+    <br>
+<% end %>
 
 
 

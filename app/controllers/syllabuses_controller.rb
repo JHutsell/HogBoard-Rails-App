@@ -13,7 +13,12 @@ class SyllabusesController < ApplicationController
     def create
         params[:syllabus][:student_id] = @current_student.id
         @syllabus = Syllabus.create(syllabus_params)
-        redirect_to student_path(@current_student)
+        if @syllabus.valid?
+            redirect_to student_path(@current_student)
+        else
+            flash[:message] = "You have already registered for this class!"
+            redirect_to new_syllabus_path
+        end
     end
 
     def destroy

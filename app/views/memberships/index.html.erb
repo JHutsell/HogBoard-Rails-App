@@ -4,6 +4,7 @@
     <% @memberships.each do |membership| %>
         <li>
             <%= link_to membership.club.name, club_path(membership.club) %>
+            <%= button_to "Leave this Club", membership_path(membership), method: :delete %>
         </li>
     <% end %>
 </ul>

@@ -16,7 +16,10 @@
   <p>
     Logged In As: <%= @current_student.name %> 
     <br>
-    <%= link_to "Home", student_path(@current_student) %> <%= button_to "Log Out", "/auth", method: :delete %>
+    <%= link_to "Home", student_path(@current_student) %>
+    <%= link_to "All Courses", courses_path %>
+    <%= link_to "All Clubs", clubs_path %>
+    <%= button_to "Log Out", "/auth", method: :delete %>
 
 <% else %>
 
