@@ -8,6 +8,8 @@ class ClubsController < ApplicationController
     def show
         @students = @club.students
         @chats = @club.chats
+        @chat = Chat.new
+        @student = @current_student
     end
 
     def new

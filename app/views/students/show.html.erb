@@ -1,5 +1,5 @@
 <h1><%= @student.name %></h1>
-<p>House: <%= @student.house %></p>
+<p>House: <%= link_to @student.house, students_path %></p>
 <p>Year: <%= @student.year %></p>
 <p>Patronus: <%= @student.patronus %></p>
 <p>Bloodstatus: <%= @student.bloodstatus %></p>
@@ -7,10 +7,6 @@
 <%= link_to "All of My Courses", syllabuses_path %>
 <br>
 <%= link_to "All of My Clubs", memberships_path %>
-<br>
-<%= button_to "Register for a course", new_syllabus_path, method: :get %>
-<br>
-<%= button_to "Join a Club", new_membership_path, method: :get %>
 <br>
 <h4>My Comments</h4>
 <ul>
@@ -20,6 +16,10 @@
         </li>
     <% end %>
 </ul>
+<%= button_to "Register for a course", new_syllabus_path, method: :get %>
+<br>
+<%= button_to "Join a Club", new_membership_path, method: :get %>
+<br>
 
 
 

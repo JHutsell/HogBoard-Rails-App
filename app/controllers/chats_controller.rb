@@ -18,7 +18,7 @@ class ChatsController < ApplicationController
         params[:chat][:student_id] = @current_student.id
         @chat = Chat.create(chat_params)
         if @chat.valid?
-            redirect_to chats_path
+            redirect_to club_path(@chat.club)
         else
             flash[:errors] = @chat.errors.full_messages
             redirect_to new_chat_path 
