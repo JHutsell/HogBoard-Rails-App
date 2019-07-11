@@ -1,6 +1,9 @@
+
 <h1> Log In To Hogboard </h1>
 
-
+ <% if flash[:message] %>
+  <% flash[:message] %>
+  <% end %>
 
 <h2>
 <%= form_tag "/auth" do %>
@@ -14,6 +17,3 @@
   <% end %>
   </h2>
 
-  <h3>
-
-  </h3>

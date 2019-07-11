@@ -2,6 +2,9 @@ class AuthController < ApplicationController
 
 
     def new 
+      if @logged_in
+        redirect_to student_path(@current_student)
+      end
     end 
 
     def create
