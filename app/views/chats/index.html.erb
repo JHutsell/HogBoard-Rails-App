@@ -1,0 +1,9 @@
+<h1>All of your Messages</h1>
+
+<ul>
+    <% @chats.each do |chat| %>
+        <li>
+            "<%= link_to chat.content, chat_path(chat) %>" in <%= link_to chat.club.name, club_path(chat.club) %>
+        </li>
+    <% end %>
+</ul>

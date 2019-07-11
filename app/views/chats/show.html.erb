@@ -1,0 +1,6 @@
+<%= link_to @chat.club.name, club_path(@chat.club) %>
+<br>
+<%= @chat.content %>
+<br>
+<%= button_to "Edit this Chat", edit_chat_path(@chat), method: :get %>
+<%= button_to "Delete this Chat", chat_path(@chat), method: :delete %>

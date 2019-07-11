@@ -1,7 +1,4 @@
-# require "club/chats_controller"
-
-class Clubs::ChatsController < ApplicationController
-
+class ChatsController < ApplicationController
     before_action :find_chat, only: [:show, :edit, :update, :destroy]
     before_action :authorized
 
@@ -15,18 +12,16 @@ class Clubs::ChatsController < ApplicationController
 
     def new 
         @chat = Chat.new
-        @club_id = params[:club_id]
     end
     
     def create
-        @chat = Chat.create(chat_params)
         params[:chat][:student_id] = @current_student.id
-        params[:chat][:club_id] = @club_id
+        @chat = Chat.create(chat_params)
         if @chat.valid?
-            redirect_to club_path(@chat.club_id)
+            redirect_to chats_path
         else
             flash[:errors] = @chat.errors.full_messages
-            redirect_to new_club_chat_path 
+            redirect_to new_chat_path 
         end
     end
 
@@ -36,12 +31,10 @@ class Clubs::ChatsController < ApplicationController
 
     def update
         if @chat.update(chat_params)
-            params[:chat][:student_id] = @current_student.id
-            params[:chat][:club_id] = @club_id
-            redirect_to club_chat_path(@chat)
+            redirect_to chat_path(@chat)
         else 
             flash[:errors] = @chat.errors.full_messages
-            redirect_to edit_club_chat_path(@chat)
+            redirect_to edit_chat_path(@chat)
         end
     end
 

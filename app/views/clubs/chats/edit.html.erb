@@ -1,8 +1,0 @@
-<h1>Edit a post</h1>
-
-<%= form_for @chat, url: "/clubs/#{@club_id}/chats" do |f| %>
-    <%= f.label :content %>
-    <%= f.text_field :content %>
-    <%= f.submit %>
-
-<% end %>

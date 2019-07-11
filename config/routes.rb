@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :syllabuses
   root to: "auth#new"
   
-  # resources :chats
+  resources :chats
   resources :memberships
   resources :clubs, only: [:index, :show, ]
   resources :professors, only: [:index, :show]
@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resources :students, only: [:index, :show, :new, :create]
 
   resources :clubs do 
-    resources :chats, controller: "clubs/chats"
+    resources :chats
   end
 
   get "/login", to: "auth#new", as: "login"
