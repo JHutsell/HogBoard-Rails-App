@@ -14,4 +14,20 @@ class Student < ApplicationRecord
     def shared_house
         Student.all.select { |student| student.house == self.house }
     end
+
+    def self.gryffindor_students
+        Student.all.select { |student| student.house == "Gryffindor" }
+      end
+  
+      def self.slytherin_students
+        Student.all.select { |student| student.house == "Slytherin" }
+      end
+  
+      def self.ravenclaw_students
+        Student.all.select { |student| student.house == "Ravenclaw" }
+      end
+  
+      def self.hufflepuff_students
+        Student.all.select { |student| student.house == "Hufflepuff" }
+      end
 end

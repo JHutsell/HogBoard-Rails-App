@@ -34,6 +34,60 @@
       <li class="nav-item">
         <a class="nav-link" <%= link_to "All Professors", professors_path %></a>
       </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Gryffindor
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <% Student.gryffindor_students.each do |student| %>
+            <a class="dropdown-item" <%= link_to student.name, student_path(student) %></a>
+          <% end %>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Slytherin
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <% Student.slytherin_students.each do |student| %>
+            <a class="dropdown-item" <%= link_to student.name, student_path(student) %></a>
+          <% end %>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Ravenclaw
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <% Student.ravenclaw_students.each do |student| %>
+            <a class="dropdown-item" <%= link_to student.name, student_path(student) %></a>
+          <% end %>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Hufflepuff
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <% Student.hufflepuff_students.each do |student| %>
+            <a class="dropdown-item" <%= link_to student.name, student_path(student) %></a>
+          <% end %>
+        </div>
+      </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       <div id="logout"> <li class="nav-item">
         <a class="nav-link" <%= link_to "Log Out", "/auth", method: :delete %></a>
       </li>
@@ -59,6 +113,6 @@
     <footer>
       <p>HogBoard ©2019<p>
    </footer>
-   
+
   </body>
 </html>
