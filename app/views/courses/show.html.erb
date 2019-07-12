@@ -1,8 +1,10 @@
+<div id="class-show">
 <h1><%= @course.name %></h1>
 <h3>Taught by: <%= link_to @course.professor.name, professor_path(@course.professor) %></h3>
-
+<br>
+<br>
 <h4>Class Description: </h4>
-<p><%= @course.description %></p>
+<p>     <%= @course.description %></p>
 <p>Class Roster: </p>
 <ul>
     <% @students.each do |student| %>
@@ -11,3 +13,6 @@
         </li>
     <% end %>
 </ul>
+<br>
+<h5> <%= link_to "Back", courses_path %> </h5>
+</div>

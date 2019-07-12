@@ -1,16 +1,21 @@
+<div id="club-show">
 <h1><%= @club.name %></h1>
 
 <p><%= @club.description %></p>
 
+<div id="roster">
 <p>Club Roster: </p>
 <ul>
     <% @students.each do |student| %>
         <li>
-            <%= link_to student.name, student_path(student) %>
+          <%= link_to student.name, student_path(student) %> 
         </li>
     <% end %>
-
+</div>
+<br>
+<br>
 <h4>
+<div id="comment-box">
 Post a Comment:
 <%= form_for @chat do |f| %>
     <br>
@@ -20,7 +25,7 @@ Post a Comment:
     <br>
     <%= f.submit "Post" %>
 <% end%>
-
+</div>
 </h4>
 
 </ul>
@@ -36,5 +41,8 @@ Post a Comment:
 </ul>
 
  <%= link_to "View Your Comments", chats_path %>
+ <br>
+<br>
+ <h5> <%= link_to "Back", clubs_path %> </h5>
 
-
+</div>

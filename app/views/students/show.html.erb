@@ -11,7 +11,9 @@
 <% end %>
 
     <div id="student_show">
+    <div id="student-name">
         <h1><%= @student.name %></h1>
+        </div>
         <p>House: <%= link_to @student.house, students_path %></p>
         <p>Year: <%= @student.year %></p>
         <p>Patronus: <%= @student.patronus %></p>

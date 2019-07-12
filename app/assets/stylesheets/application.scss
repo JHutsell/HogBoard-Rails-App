@@ -38,6 +38,7 @@
 
 #student_show {
     text-align: center;
+    text-shadow: white;
 }
 
 #logout {
@@ -118,6 +119,28 @@ footer {
       border-style: solid;
   }
 
+#club-show {
+    background-image: url("https://images.pexels.com/photos/220085/pexels-photo-220085.jpeg?cs=srgb&dl=4k-wallpaper-background-galaxy-220085.jpg&fm=jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+}
 
+#class-show {
+
+    background-image: url("https://images.pexels.com/photos/220085/pexels-photo-220085.jpeg?cs=srgb&dl=4k-wallpaper-background-galaxy-220085.jpg&fm=jpg");
+    background-size: cover;
+    height:100vh;
+    color: white;
+    
+}
+
+#link {
+    color: yellow;
+}
+
+#comment-box {
+    margin-left: 30px;
+}
 
 
