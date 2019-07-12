@@ -1,6 +1,6 @@
 <div id="class-show">
 <h1><%= @course.name %></h1>
-<h3>Taught by: <%= link_to @course.professor.name, professor_path(@course.professor) %></h3>
+<h3>Taught by: <%= link_to @course.professor.name, professor_path(@course.professor), style: 'color: yellow;', class: 'css_class' %></h3>
 <br>
 <br>
 <h4>Class Description: </h4>
@@ -9,10 +9,10 @@
 <ul>
     <% @students.each do |student| %>
         <li>
-            <%= link_to student.name, student_path(student) %>
+            <%= link_to student.name, student_path(student), style: 'color: yellow;', class: 'css_class' %>
         </li>
     <% end %>
 </ul>
 <br>
-<h5> <%= link_to "Back", courses_path %> </h5>
+<h5> <%= link_to "Back", courses_path, style: 'color: yellow;', class: 'css_class' %> </h5>
 </div>

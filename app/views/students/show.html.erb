@@ -11,10 +11,8 @@
 <% end %>
 
     <div id="student_show">
-    <div id="student-name">
         <h1><%= @student.name %></h1>
-        </div>
-        <p>House: <%= link_to @student.house, students_path %></p>
+        <p>House: <%= @student.house %></p>
         <p>Year: <%= @student.year %></p>
         <p>Patronus: <%= @student.patronus %></p>
         <p>Bloodstatus: <%= @student.bloodstatus %></p>
@@ -33,17 +31,13 @@
         </div>
         
         
-        
-        
-        
-        
         <br>
         <div class="my-chats">
             <h4>My Comments</h4>
             <ul>
                 <% @chats.each do |chat| %>
                     <li>
-                        "<%= link_to chat.content, chat_path(chat) %>" - <%= link_to chat.club.name, club_path(chat.club) %>
+                        "<%= link_to chat.content, chat_path(chat), style: 'color: yellow;', class: 'css_class' %>" - <%= link_to chat.club.name, club_path(chat.club), style: 'color: yellow;', class: 'css_class' %>
                     </li>
                 <% end %>
             </ul>

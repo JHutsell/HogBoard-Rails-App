@@ -8,7 +8,7 @@
 <ul>
     <% @students.each do |student| %>
         <li>
-          <%= link_to student.name, student_path(student) %> 
+          <%= link_to student.name, student_path(student), style: 'color: yellow;', class: 'css_class' %> 
         </li>
     <% end %>
 </div>
@@ -37,14 +37,14 @@
         <li>
             "<%= chat.content %>" 
             <br>
-            by: <%= link_to chat.student.username, student_path(chat.student) %>
+            by: <%= link_to chat.student.username, student_path(chat.student), style: 'color: yellow;', class: 'css_class' %>
         </li>
     <% end %>
 </ul>
 
- <%= link_to "View Your Comments", chats_path %>
+ <%= link_to "View Your Comments", chats_path, style: 'color: yellow;', class: 'css_class' %>
  <br>
 <br>
- <h5> <%= link_to "Back", clubs_path %> </h5>
+ <h5> <%= link_to "Back", clubs_path, style: 'color: yellow;', class: 'css_class' %> </h5>
 
 </div>
