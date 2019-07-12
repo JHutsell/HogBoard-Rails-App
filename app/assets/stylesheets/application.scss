@@ -92,32 +92,32 @@ footer {
     background-color: #111; /* Black */
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 20px;
-  }
+}
   
   /* The navigation menu links */
-  .sidebar-left a {
+.sidebar-left a {
     padding: 6px 8px 6px 16px;
     text-decoration: none;
     font-size: 15px;
     color: #818181;
     display: block;
-  }
+}
   
   /* When you mouse over the navigation links, change their color */
-  .sidebar-left a:hover {
+.sidebar-left a:hover {
     color: #f1f1f1;
-  }
+}
   
   /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
-  @media screen and (max-height: 450px) {
+@media screen and (max-height: 450px) {
     .sidebar-left {padding-top: 15px;}
     .sidebar-left a {font-size: 18px;}
-  }
+}
 
-  .my-chats {
+.my-chats {
       text-align: center;
       border-style: solid;
-  }
+}
 
 #club-show {
     background-image: url("https://images.pexels.com/photos/220085/pexels-photo-220085.jpeg?cs=srgb&dl=4k-wallpaper-background-galaxy-220085.jpg&fm=jpg");
@@ -127,16 +127,10 @@ footer {
 }
 
 #class-show {
-
     background-image: url("https://images.pexels.com/photos/220085/pexels-photo-220085.jpeg?cs=srgb&dl=4k-wallpaper-background-galaxy-220085.jpg&fm=jpg");
     background-size: cover;
     height:100vh;
     color: white;
-    
-}
-
-#link {
-    color: yellow;
 }
 
 #comment-box {
