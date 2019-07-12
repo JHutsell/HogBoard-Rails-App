@@ -1,9 +1,12 @@
-<h1>All Professors</h1>
+<div id="non-student-index">
+    <h1>All Professors</h1>
 
-<ul>
-    <% @professors.each do |professor| %>
-        <li>
-            <%= link_to professor.name, professor_path(professor) %> teaches: <%= professor.subject %>
-        </li>
-    <% end %>
-</ul>
+    <% sorted = @professors.sort_by { |professor| professor.name } %>
+    <ul>
+        <% sorted.each do |professor| %>
+            <li>
+                <%= link_to professor.name, professor_path(professor) %> teaches: <%= professor.subject %>
+            </li>
+        <% end %>
+    </ul>
+</div>

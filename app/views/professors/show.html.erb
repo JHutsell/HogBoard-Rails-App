@@ -1,3 +1,12 @@
+<div class="professor">
 <h1><%= @professor.name %></h1>
+<%= image_tag(@professor.image)%>
 <h3>House: <%= @professor.house %></h3>
 <h3>Subject taught: <%= @professor.subject %></h3>
+<h3>Classes taught: </h3>
+<% @professor.courses.each do |course| %>
+    <li>
+        <%= link_to course.name, course_path(course) %>
+    </li>
+<% end %>
+</div>

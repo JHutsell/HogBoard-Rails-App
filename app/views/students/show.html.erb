@@ -1,27 +1,44 @@
-<h1><%= @student.name %></h1>
-<p>House: <%= link_to @student.house, students_path %></p>
-<p>Year: <%= @student.year %></p>
-<p>Patronus: <%= @student.patronus %></p>
-<p>Bloodstatus: <%= @student.bloodstatus %></p>
-<br>
-<% if @student == @current_student %>
-    <%= link_to "All of My Courses", syllabuses_path %>
-    <br>
-    <%= link_to "All of My Clubs", memberships_path %>
-    <br>
-    <h4>My Comments</h4>
-    <ul>
-        <% @chats.each do |chat| %>
-            <li>
-                "<%= link_to chat.content, chat_path(chat) %>" - <%= link_to chat.club.name, club_path(chat.club) %>
-            </li>
-        <% end %>
-    </ul>
-    <%= button_to "Register for a course", new_syllabus_path, method: :get %>
-    <br>
-    <%= button_to "Join a Club", new_membership_path, method: :get %>
-    <br>
+<% if @student.house == "Gryffindor" %>
+    <div style="background-color: #AE0001; height:80vh;">
+<% elsif @student.house == "Slytherin" %>
+    <div style="background-color: #2A623D; height:100vh;">
+<% elsif @student.house == "Ravenclaw" %>
+    <div style="background-color: #004E80; height:100vh;">
+<% elsif @student.house == "Hufflepuff" %>
+    <div style="background-color: #ECB939; height:100vh;">
+<% else %>
+    <div>
 <% end %>
+
+    <div id="student_show">
+        <h1><%= @student.name %></h1>
+        <p>House: <%= link_to @student.house, students_path %></p>
+        <p>Year: <%= @student.year %></p>
+        <p>Patronus: <%= @student.patronus %></p>
+        <p>Bloodstatus: <%= @student.bloodstatus %></p>
+    </div>
+<br>
+    <% if @student == @current_student %>
+        <%= link_to "All of My Courses", syllabuses_path %>
+        <br>
+        <%= link_to "All of My Clubs", memberships_path %>
+        <br>
+        <h4>My Comments</h4>
+        <ul>
+            <% @chats.each do |chat| %>
+                <li>
+                    "<%= link_to chat.content, chat_path(chat) %>" - <%= link_to chat.club.name, club_path(chat.club) %>
+                </li>
+            <% end %>
+        </ul>
+        <%= button_to "Register for a course", new_syllabus_path, method: :get %>
+        <br>
+        <%= button_to "Join a Club", new_membership_path, method: :get %>
+        <br>
+    <% end %>
+</div>
+
+
 
 
 

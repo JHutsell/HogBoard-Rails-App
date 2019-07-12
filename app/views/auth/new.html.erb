@@ -1,19 +1,23 @@
+<div id="login-page">
+  <div id="login-text">
+    <h1> Log In To Hogboard </h1>
 
-<h1> Log In To Hogboard </h1>
+    <% if flash[:message] %>
+      <% flash[:message] %>
+      <% end %>
 
- <% if flash[:message] %>
-  <% flash[:message] %>
-  <% end %>
-
-<h2>
-<%= form_tag "/auth" do %>
-    <%= label_tag "Username:" %>
-    <%= text_field_tag :username %>
-    <br>
-    <%= label_tag "Password:" %>
-    <%= password_field_tag :password %>
-    <br>
-    <%= submit_tag "Log In" %>
-  <% end %>
-  </h2>
+    <h2>
+      <%= form_tag "/auth" do %>
+          <%= label_tag "Username:" %>
+          <%= text_field_tag :username %>
+          <br>
+          <%= label_tag "Password:   " %>
+          <%= password_field_tag :password %>
+          <br>
+          <%= submit_tag "Log In" %>
+      <% end %>
+        <p><%= link_to "Register", new_student_path %></p>
+    </h2>
+  </div>
+</div>
 

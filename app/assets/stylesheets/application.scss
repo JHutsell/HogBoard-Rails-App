@@ -13,3 +13,63 @@
  
  */
  @import "bootstrap";
+
+
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+
+.professor img {
+    height:300px;
+}
+
+.navbar-brand img {
+    height:70px;
+    width:70px;
+}
+
+.navbar {
+    font-family: 'Roboto', sans-serif;
+}
+
+#student_show {
+    text-align: center;
+}
+
+#logout {
+    margin-left: 800px; 
+}
+
+#non-student-index {
+    background-image: url("https://i.pinimg.com/originals/f6/a1/62/f6a162b7718d7b2822921d72b886d015.jpg");
+    background-size: cover;
+    height:100vh;
+    background-repeat: no-repeat;
+}
+
+#login-page {
+    background-image: url("https://st.hzcdn.com/simgs/a381e3d50b8419d9_4-0678/home-design.jpg");
+    height:100vh;
+    text-align: center;
+    color: yellow;
+}
+
+#login-text {
+  position: absolute;
+  width: 500px;
+  height: 200px;
+  z-index: 15;
+  top: 50%;
+  left: 43%;
+  margin: -100px 0 0 -150px;
+}
+
+footer {
+    text-align: center;
+    background-color: #343A3F;
+    color: yellow;
+    height: 70px;
+}
+
+
+
+

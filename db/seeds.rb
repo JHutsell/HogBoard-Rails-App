@@ -5,21 +5,23 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
+
 Club.destroy_all
 Professor.destroy_all
 Course.destroy_all
 
-flitwick = Professor.create(name: "Filius Flitwick", house: "Ravenclaw", subject: "Charms")
-sprout = Professor.create(name: "Pomona Sprout", house: "Hufflepuff", subject: "Herbology")
-snape = Professor.create(name: "Severus Snape", house: "Slytherin", subject: "Potions")
-lupin = Professor.create(name: "Remus Lupin", house: "Gryffindor", subject: "Defense Against the Dark Arts")
-trelawney = Professor.create(name: "Sybill Trelawney", house: "Ravenclaw", subject: "Divination")
-hagrid = Professor.create(name: "Rubeus Hagrid", house: "Gryffindor", subject: "Care of Magical Creatures")
-mcgonagall = Professor.create(name: "Minerva McGonagall", house: "Grynffindor", subject: "Transfiguration")
-burbage = Professor.create(name: "Charity Burbage", house: "Hufflepuff", subject: "Muggle Studies")
-hooch = Professor.create(name: "Rolanda Hooch", house: "Ravenclaw", subject: "Quidditch")
-franchely = Professor.create(name: "Franchely Portorreal", house: "Ravenclaw", subject: "Music")
-justin = Professor.create(name: "Justin Hutsell", house: "Gryffindor", subject: "Wizarding Enjoyment")
+flitwick = Professor.create(name: "Filius Flitwick", house: "Ravenclaw", subject: "Charms", image: "flitwick.jpg")
+sprout = Professor.create(name: "Pomona Sprout", house: "Hufflepuff", subject: "Herbology", image: "sprout.jpg")
+snape = Professor.create(name: "Severus Snape", house: "Slytherin", subject: "Potions", image: "snape.jpg")
+lupin = Professor.create(name: "Remus Lupin", house: "Gryffindor", subject: "Defense Against the Dark Arts", image: "lupin.jpg")
+trelawney = Professor.create(name: "Sybill Trelawney", house: "Ravenclaw", subject: "Divination", image: "Trelawney.jpg")
+hagrid = Professor.create(name: "Rubeus Hagrid", house: "Gryffindor", subject: "Care of Magical Creatures", image: "hagrid.jpeg")
+mcgonagall = Professor.create(name: "Minerva McGonagall", house: "Grynffindor", subject: "Transfiguration", image: "mcgonagall.jpg")
+burbage = Professor.create(name: "Charity Burbage", house: "Hufflepuff", subject: "Muggle Studies", image: "burbage.jpg")
+hooch = Professor.create(name: "Rolanda Hooch", house: "Ravenclaw", subject: "Quidditch", image: "hooch.jpg")
+franchely = Professor.create(name: "Franchely Portorreal", house: "Ravenclaw", subject: "Music", image: "franchely.JPG")
+justin = Professor.create(name: "Justin Hutsell", house: "Gryffindor", subject: "Wizarding Enjoyment", image: "justin.jpeg")
 
 quidditch = Club.create(name: "Quidditch Club", description: "Join our Hogwarts Quidditch team! Must have a broom! 🧹", professor: hooch)
 dumbledores_army = Club.create(name: "Dumbledore's Army", description: "Join Dumbledore's Army! Learn helpful skills to defend against the Dark Arts!", professor: lupin)
@@ -40,3 +42,25 @@ care = Course.create(name: "Care of Magical Creatures 101", description: "Learn 
 music = Course.create(name: "Music 101", description: "Learn the basics of musical instruments such as the dissimulator, harp, piano, and musical saw. Beginners welcome!", professor: franchely)
 gym = Course.create(name: "Gym 101", description: "None.", professor: hooch)
 fun = Course.create(name: "Mixology 101", description: "Learn how to have real wizard fun.", professor: justin)
+
+students= []
+
+70.times do
+   students << Student.create!(name: Faker::FunnyName.unique.name, username: Faker::Internet.unique.username, password: "123", house: ["Gryffindor", "Slytherin", "Ravenclaw", "Hufflepuff"].sample, year: Faker::Number.between(1, 7), patronus: Faker::Creature::Animal.name, bloodstatus: ["Muggle-Born", "Half-Blood", "Pure-Blood"].sample)
+ end
+
+50.times do
+   Membership.create!(student_id: Student.all.sample.id, club_id: Club.all.sample.id)
+end
+
+20.times do
+   Chat.create!(content: Faker::TvShows::RuPaul.quote, student_id: Student.all.sample.id, club_id: Club.all.sample.id)
+end
+
+20.times do
+   Chat.create!(content: Faker::TvShows::MichaelScott.quote, student_id: Student.all.sample.id, club_id: Club.all.sample.id)
+end
+
+30.times do
+    Syllabus.create!(student_id: Student.all.sample.id, course_id: Course.all.sample.id)
+ end
