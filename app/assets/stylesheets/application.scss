@@ -22,6 +22,10 @@
     height:300px;
 }
 
+.professor {
+    text-align: center;
+}
+
 .navbar-brand img {
     height:70px;
     width:70px;
@@ -29,6 +33,7 @@
 
 .navbar {
     font-family: 'Roboto', sans-serif;
+    z-index: 2;
 }
 
 #student_show {
@@ -37,7 +42,7 @@
 }
 
 #logout {
-    margin-left: 800px; 
+    margin-left: 400px; 
 }
 
 #non-student-index {
@@ -69,10 +74,52 @@ footer {
     background-color: #343A3F;
     color: yellow;
     height: 70px;
+    
 }
 
-#club-show {
+.foot {
+    position: relative;
+    z-index: 2;
+}
 
+.sidebar-left {
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 160px; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: #111; /* Black */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
+  }
+  
+  /* The navigation menu links */
+  .sidebar-left a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 15px;
+    color: #818181;
+    display: block;
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .sidebar-left a:hover {
+    color: #f1f1f1;
+  }
+  
+  /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+  @media screen and (max-height: 450px) {
+    .sidebar-left {padding-top: 15px;}
+    .sidebar-left a {font-size: 18px;}
+  }
+
+  .my-chats {
+      text-align: center;
+      border-style: solid;
+  }
+
+#club-show {
     background-image: url("https://images.pexels.com/photos/220085/pexels-photo-220085.jpeg?cs=srgb&dl=4k-wallpaper-background-galaxy-220085.jpg&fm=jpg");
     background-size: cover;
     background-repeat: no-repeat;
