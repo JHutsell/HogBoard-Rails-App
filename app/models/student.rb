@@ -8,8 +8,8 @@ class Student < ApplicationRecord
 
     has_secure_password
 
-    # validates_uniqueness_of :username
-    # validates_uniqueness_of :name
+    validates_uniqueness_of :username
+    validates_uniqueness_of :name
 
     def shared_house
         Student.all.select { |student| student.house == self.house }

@@ -1,24 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app is a mockup version of the popular learning management system, BlackBoard©. It is a Harry Potter themed version, titled "HogBoard". It utilizes Rails, custom CSS, and Bootstrap. 
 
-Things you may want to cover:
 
-* Ruby version
+* Ruby version 2.6.1
 
-* System dependencies
+* Utilizes the following gems: bootstrap, faker, bcrypt
 
-* Configuration
+* Fully functional login, registration, and database. 
 
-* Database creation
+* Coming soon: Heroku hosting 
 
-* Database initialization
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
