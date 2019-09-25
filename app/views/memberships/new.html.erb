@@ -9,6 +9,6 @@
         <%= f.hidden_field :student_id %>
         <%= f.label :club_id %>
         <%= f.collection_select :club_id, @clubs, :id, :name %>
-        <%= f.submit "Sign Up" %>   
+        <button type="submit" class="btn btn-success">Sign Up</button>
     <% end %>
 </div>
