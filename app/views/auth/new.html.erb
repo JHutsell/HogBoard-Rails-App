@@ -1,4 +1,10 @@
 <div id="login-page">
+
+  <div>
+    <%= image_tag("hogboard logo.png")%>
+  </div>
+  <h4>Manage all of your classes, clubs, and professors as well as communicate with your classmates, with ease.</h4>
+
   <div id="login-text">
     <h1> Log In To Hogboard </h1>
 
@@ -10,13 +16,14 @@
       <%= form_tag "/auth" do %>
           <%= label_tag "Username:" %>
           <%= text_field_tag :username %>
-          <br>
+          <br><br>
           <%= label_tag "Password:   " %>
           <%= password_field_tag :password %>
-          <br>
-          <%= submit_tag "Log In" %>
+          <br><br>
+          <button type="submit" class="btn btn-success btn-lg">Log In</button>
       <% end %>
-        <p><%= link_to "Register", new_student_path, style: 'color: yellow;', class: 'css_class' %></p>
+      <h4>New to HogBoard?</h4>
+        <button type="submit" class="btn btn-info btn-lg"><%= link_to "Register", new_student_path %></button>
     </h2>
   </div>
 </div>

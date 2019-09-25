@@ -1,12 +1,14 @@
-<h1>Club Sign Up</h1>
+<div class="my-clubs-sidebar">
+    <h1>Club Sign Up</h1>
 
-<% if flash[:message] %>
-    <%= flash[:message] %>
-<% end %>
+    <% if flash[:message] %>
+        <%= flash[:message] %>
+    <% end %>
 
-<%= form_for @membership do |f| %>
-    <%= f.hidden_field :student_id %>
-    <%= f.label :club_id %>
-    <%= f.collection_select :club_id, @clubs, :id, :name %>
-    <%= f.submit "Sign Up" %>   
-<% end %>
+    <%= form_for @membership do |f| %>
+        <%= f.hidden_field :student_id %>
+        <%= f.label :club_id %>
+        <%= f.collection_select :club_id, @clubs, :id, :name %>
+        <%= f.submit "Sign Up" %>   
+    <% end %>
+</div>

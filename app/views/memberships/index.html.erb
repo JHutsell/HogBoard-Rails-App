@@ -1,10 +1,12 @@
-<h1>All of your Clubs</h1>
+<div class="my-clubs-sidebar">
+    <h1>All of your Clubs</h1>
 
-<ul>
-    <% @memberships.each do |membership| %>
-        <li>
-            <%= link_to membership.club.name, club_path(membership.club) %>
-            <%= button_to "Leave this Club", membership_path(membership), method: :delete %>
-        </li>
-    <% end %>
-</ul>
+    <ul>
+        <% @memberships.each do |membership| %>
+            <li>
+                <%= link_to membership.club.name, club_path(membership.club) %>
+                <%= button_to "Leave this Club", membership_path(membership), method: :delete %>
+            </li>
+        <% end %>
+    </ul>
+</div>

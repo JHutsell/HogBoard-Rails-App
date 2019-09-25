@@ -1,10 +1,12 @@
-<h1>All of your Classes</h1>
+<div class="my-classes-sidebar">
+    <h1>All of your Classes</h1>
 
-<ul>
-    <% @syllabuses.each do |syllabus| %>
-        <li>
-            <%= link_to syllabus.course.name, course_path(syllabus.course) %>
-            <%= button_to "Drop this Course", syllabus_path(syllabus), method: :delete %>
-        </li>
-    <% end %>
-</ul>
+    <ul>
+        <% @syllabuses.each do |syllabus| %>
+            <li>
+                <%= link_to syllabus.course.name, course_path(syllabus.course) %>
+                <%= button_to "Drop this Course", syllabus_path(syllabus), method: :delete %>
+            </li>
+        <% end %>
+    </ul>
+</div>
