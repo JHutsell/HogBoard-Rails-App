@@ -1,6 +1,5 @@
 class AuthController < ApplicationController 
 
-
     def new 
       if @logged_in
         redirect_to student_path(@current_student)
@@ -24,11 +23,6 @@ class AuthController < ApplicationController
     session[:student_id] = nil
     redirect_to login_path
   end
-
-  
-
-
-
 
 
 end

@@ -53,4 +53,5 @@ class ChatsController < ApplicationController
     def chat_params
         params.require(:chat).permit(:content, :student_id, :club_id)
     end
+    
 end

@@ -35,4 +35,5 @@ class ClubsController < ApplicationController
     def course_params
         params.require(:club).permit(:name, :description, :professor_id)
     end
+    
 end

@@ -10,9 +10,9 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- 
+
  */
- @import "bootstrap";
+@import "bootstrap";
 
 
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
@@ -67,13 +67,13 @@
 }
 
 #login-text {
-  position: absolute;
-  width: 500px;
-  height: 200px;
-  z-index: 15;
-  top: 50%;
-  left: 43%;
-  margin: -100px 0 0 -150px;
+    position: absolute;
+    width: 500px;
+    height: 200px;
+    z-index: 15;
+    top: 50%;
+    left: 43%;
+    margin: -100px 0 0 -150px;
 }
 
 footer {
@@ -90,17 +90,17 @@ footer {
 }
 
 .sidebar-left {
-    height: 100%; /* Full-height: remove this if you want "auto" height */
-    width: 160px; /* Set the width of the sidebar */
-    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-    z-index: 1; /* Stay on top */
-    top: 0; /* Stay at the top */
+    height: 100%; 
+    width: 160px; 
+    position: fixed; 
+    z-index: 1; 
+    top: 0; 
     left: 0;
-    background-color: #111; /* Black */
-    overflow-x: hidden; /* Disable horizontal scroll */
+    background-color: #111; 
+    overflow-x: hidden; 
     padding-top: 20px;
 }
-  
+
   /* The navigation menu links */
 .sidebar-left a {
     padding: 6px 8px 6px 16px;
@@ -109,12 +109,11 @@ footer {
     color: #818181;
     display: block;
 }
-  
-  /* When you mouse over the navigation links, change their color */
+
 .sidebar-left a:hover {
     color: #f1f1f1;
 }
-  
+
   /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
     .sidebar-left {padding-top: 15px;}
@@ -122,14 +121,14 @@ footer {
 }
 
 .my-chats {
-      color: white;
-      text-align: center;
-      border: 2px solid #343A3F;
-      width: 600px;
-      margin-left: 425px;
-      background-size: cover;
-      background-position: 50px;
-      background-image: url("https://images.unsplash.com/photo-1536300995586-2c63143ea13f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2734&q=80");
+    color: white;
+    text-align: center;
+    border: 2px solid #343A3F;
+    width: 600px;
+    margin-left: 425px;
+    background-size: cover;
+    background-position: 50px;
+    background-image: url("https://images.unsplash.com/photo-1536300995586-2c63143ea13f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2734&q=80");
 }
 
 #club-show {
